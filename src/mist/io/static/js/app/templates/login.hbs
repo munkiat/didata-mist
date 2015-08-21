@@ -1,0 +1,32 @@
+<div id="login-popup" class="mid-popup" data-role="popup" data-overlay-theme="b" data-transition="flip">
+
+    <div data-role="header" data-theme="b">
+        <h1>Login to mist.io</h1>
+    </div>
+
+    <div data-role="content">
+        <label for="login-email">Email:</label>
+        {{view Mist.TextField
+               id="login-email"
+               valueBinding="Mist.loginController.email"}}
+
+        <label for="login-password">Password:</label>
+        {{view Mist.TextField
+               id="login-password"
+               type="password"
+               valueBinding="Mist.loginController.password"}}
+
+        {{#if Mist.loginController.loggingIn}}
+        <div class="ajax-loader"></div>
+        {{/if}}
+        <a {{action "forgot" target="view"}} target="_new">Forgot your password?</a>
+        <div class="ok-cancel" data-role="controlgroup" data-type="horizontal">
+            <a class="ui-btn ui-btn-a ui-shadow ui-corner-all"
+                {{action "backClicked" target="view"}}>Back</a>
+            <a id="login-ok" class="ui-btn ui-btn-d ui-shadow ui-corner-all"
+                {{action "loginClicked" target="view"}}>Log in</a>
+        </div>
+
+    </div>
+
+</div>

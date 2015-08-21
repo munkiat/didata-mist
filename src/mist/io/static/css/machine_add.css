@@ -1,0 +1,56 @@
+
+/* Machine Add Panel CSS
+-----------------------------------------------------------------------------------------------------------*/
+#create-machine-panel {
+    min-width: 320px;
+    width: 45%;
+}
+#create-machine-panel .docker {
+	display:none;
+}
+#create-machine-panel label {
+    margin-top: 10px;
+}
+#create-machine-panel .ui-collapsible-content {
+    max-height: 120px;
+    overflow-y: scroll;
+}
+#create-machine-panel .ok-cancel div:first-child .ui-btn {
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+#create-machine-panel .ok-cancel div:nth-child(2) .ui-btn {
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+#create-machine-cost {
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+#create-machine-network {
+	display: none;
+}
+#create-machine-network label {
+	margin-top: 0;
+}
+#create-machine-network fieldset {
+	margin-top: 0;
+}
+#create-machine-network .ui-collapsible-content {
+	padding: 0;
+}
+#create-machine-panel #script .ui-slider {
+    width: 40%;
+    float: right;
+}
+#create-machine-panel #script label {
+    float: left;
+}
+#create-machine-panel #script textarea {
+    height: auto !important;
+    clear: both;
+}
+#create-machine-panel #script .ui-collapsible {
+    clear:both;
+}

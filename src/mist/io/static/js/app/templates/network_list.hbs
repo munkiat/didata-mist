@@ -1,0 +1,58 @@
+<div id="network-list-page" data-role="page" class="ui-page-active">
+
+    <div data-role="header" data-theme="b">
+
+        <a href="#"
+        class="responsive-button ui-btn-left ui-btn ui-icon-home
+            ui-btn-icon-left ui-shadow ui-corner-all">Home</a>
+
+        <h1>Networks</h1>
+
+        {{view "userMenu"}}
+
+    </div>
+
+    <div data-role="content" data-theme="a">
+        <a id="network-create-btn"
+            {{bind-attr
+                class="Mist.backendsController.hasOpenStack::ui-disabled
+                :responsive-button
+                :ui-btn :ui-btn-d
+                :ui-icon-plus
+                :ui-btn-icon-right
+                :ui-corner-all
+                :ui-shadow"}}
+            {{action "createClicked" target="view"}}>Create</a>
+        <ul id="networks"
+            data-role="listview"
+            data-inset="true"
+            data-filter="true"
+            data-filter-placeholder="Filter..."
+            data-theme="c"
+            class="checkbox-list">
+            {{#each Mist.backendsController}}
+                {{#if this.enabled}}
+                  {{#each this.networks}}
+                        {{view "networkListItem"
+                            networkBinding="this"
+                            class="checkbox-link"}}
+                  {{/each}}
+                {{/if}}
+            {{/each}}
+        </ul>
+
+        <div class="mid-padding"></div>
+
+    </div>
+
+    {{view "dialog"}}
+
+    {{view "networkCreate"}}
+
+    <div class="single-action-footer" data-role="footer" data-theme="b">
+        <a class="ui-btn ui-corner-all ui-btn-icon-right ui-icon-delete"
+            {{action "deleteClicked" target="view"}}>
+                Delete
+        </a>
+    </div>
+</div>

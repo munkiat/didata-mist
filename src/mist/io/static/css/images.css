@@ -1,0 +1,31 @@
+
+/* Image List Page CSS
+-----------------------------------------------------------------------------------------------------------*/
+
+@-moz-document url-prefix() {
+    #image-list-page .checkbox-link h3 {
+        width: 50%;
+        position: relative;
+        top: 4px;
+    }
+
+    #image-list-page .checkbox-link .tag {
+        position: relative;
+        bottom: 33px;
+    }
+}
+
+#image-list-page .checkbox-link h3 {
+    position: relative;
+    top: 4px;
+}
+
+#image-list-page ul .ui-checkbox-off:after {
+    background-color: rgba(0,0,0,0) !important;
+    background-repeat: no-repeat !important;
+}
+
+#image-list-page ul .ui-checkbox-on:after {
+    background-color: rgba(0,0,0,0) !important;
+    background-repeat: no-repeat !important;
+}

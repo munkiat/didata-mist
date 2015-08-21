@@ -1,0 +1,50 @@
+
+/* Metric Add Custom Popup CSS
+-----------------------------------------------------------------------------------------------------------*/
+#metric-add-custom-popup {
+    width: 38em;
+}
+
+#custom-plugin-advanced {
+    display: none;
+    margin-bottom: 25px;
+}
+
+#metric-add-custom .ui-slider {
+    width: 100%;
+}
+
+#metric-add-custom .ui-select {
+    width: 100%;
+}
+
+#custom-plugin-script {
+    max-height: 145px !important;
+    font-family: monospace;
+}
+
+#metric-add-custom-popup #custom-plugin-error {
+    font-family: monospace;
+    display: none;
+    height: auto;
+    margin-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #FFFFBF;
+    border-radius: 5px;
+    padding: 2px 8px;
+    border: 2px solid #FF0;
+    overflow: scroll;
+    max-height: 9em;
+}
+
+#metric-add-custom-popup label[for="custom-plugin-script"] {
+    margin-top: 1em;
+}
+
+#metric-add-custom-popup .ui-block-a {
+    padding-right: 5px
+}
+#metric-add-custom-popup .ui-block-b {
+    padding-left: 5px
+}

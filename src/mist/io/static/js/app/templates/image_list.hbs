@@ -1,0 +1,61 @@
+<div id="image-list-page" data-role="page" class="ui-page-active">
+
+    <div data-role="header" data-theme="b">
+
+        <a href="#" class="responsive-button ui-btn-left ui-btn ui-icon-home
+            ui-btn-icon-left ui-shadow ui-corner-all">Home</a>
+
+        <h1>Images</h1>
+
+        {{view "userMenu"}}
+
+    </div>
+
+    <div data-role="content" data-theme="a">
+
+        {{#if Mist.backendsController.loadingImages}}
+            <div class="ajax-loader"></div>
+        {{/if}}
+
+        {{view Mist.TextField
+               id="search-term-input"
+               placeholder="Search images ..."
+               valueBinding="Mist.imageSearchController.searchTerm"}}
+
+        {{#if Mist.imageSearchController.isSearching}}
+            <div class="ajax-loader"></div>
+        {{/if}}
+
+        <ul id="image-list"
+            data-role="listview"
+            data-inset="true"
+            class="checkbox-list">
+            {{#each view.renderedImages}}
+                {{view "imageListItem" imageBinding="this" class="checkbox-link" }}
+            {{/each}}
+        </ul>
+
+        {{#if view.renderingMoreImages}}
+            <div class="ajax-loader"></div>
+        {{/if}}
+
+        <a id="images-advanced-search" class="ui-btn ui-btn-b ui-shadow ui-corner-all"
+            {{action "searchClicked" target="view"}}>
+            <span>
+                {{#if view.searchingImages}}
+                    Please wait...
+                {{else}}
+                    Continue search on server...
+                {{/if}}
+            </span>
+        </a>
+
+        <div class="small-padding"></div>
+
+    </div>
+
+    {{view "dialog"}}
+
+    {{view "machineAdd"}}
+
+</div>

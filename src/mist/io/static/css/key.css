@@ -1,0 +1,31 @@
+
+/* Single Key Page CSS
+-----------------------------------------------------------------------------------------------------------*/
+#single-key-page .ui-footer {
+    display: block;
+}
+#single-key-page .ui-collapsible .ajax-loader {
+    display: inline;
+    float: right;
+}
+@-moz-document url-prefix() {
+    #single-key-page .ui-collapsible .ajax-loader {
+        margin-top: -20px;
+    }
+}
+#single-key-machines .checkbox-link .ui-checkbox {
+    display: none;
+}
+
+#single-key-page .machine-name {
+    left: 10px;
+    position: relative;
+}
+
+#single-key-page #dialog-popup {
+    width: 32em !important
+}
+
+#single-key-page #dialog.large-popup {
+    width: 100% !important;
+}

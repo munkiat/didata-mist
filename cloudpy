@@ -1,0 +1,84 @@
+#!/mist3/bin/python
+
+import sys
+
+sys.path[0:0] = [
+  '/mist3/src',
+  '/mist3/lib/python2.7/site-packages',
+  '/mist3/eggs/PasteScript-2.0.2-py2.7.egg',
+  '/mist3/eggs/six-1.9.0-py2.7.egg',
+  '/mist3/eggs/PasteDeploy-1.5.2-py2.7.egg',
+  '/mist3/eggs/Paste-2.0.2-py2.7.egg',
+  '/mist3/eggs/pika-0.9.14-py2.7.egg',
+  '/mist3/eggs/sockjs_tornado-1.0.1-py2.7.egg',
+  '/mist3/eggs/websocket_client-0.32.0-py2.7.egg',
+  '/mist3/eggs/amqp-1.4.6-py2.7.egg',
+  '/mist3/eggs/netaddr-0.7.15-py2.7.egg',
+  '/mist3/eggs/gevent_subprocess-0.1.1-py2.7.egg',
+  '/mist3/eggs/gevent-1.0.2-py2.7-linux-x86_64.egg',
+  '/mist3/eggs/celery-3.1.18-py2.7.egg',
+  '/mist3/eggs/sphinx_bootstrap_theme-0.4.7-py2.7.egg',
+  '/mist3/eggs/sphinxcontrib_httpdomain-1.4.0-py2.7.egg',
+  '/mist3/eggs/behaving-1.3-py2.7.egg',
+  '/mist3/eggs/nose-1.3.7-py2.7.egg',
+  '/mist3/eggs/requests-2.7.0-py2.7.egg',
+  '/mist3/src/libcloud',
+  '/mist3/eggs/pyramid-1.4-py2.7.egg',
+  '/mist3/eggs/python_memcached-1.57-py2.7.egg',
+  '/mist3/eggs/tornado-4.2.1-py2.7-linux-x86_64.egg',
+  '/mist3/eggs/backports.ssl_match_hostname-3.4.0.2-py2.7.egg',
+  '/mist3/eggs/greenlet-0.4.7-py2.7-linux-x86_64.egg',
+  '/mist3/eggs/kombu-3.0.26-py2.7.egg',
+  '/mist3/eggs/billiard-3.3.0.20-py2.7-linux-x86_64.egg',
+  '/mist3/eggs/pytz-2015.4-py2.7.egg',
+  '/mist3/eggs/Sphinx-1.3.1-py2.7.egg',
+  '/mist3/eggs/splinter-0.7.3-py2.7.egg',
+  '/mist3/eggs/behave-1.2.5-py2.7.egg',
+  '/mist3/eggs/parse-1.6.6-py2.7.egg',
+  '/mist3/eggs/translationstring-1.3-py2.7.egg',
+  '/mist3/eggs/venusian-1.0-py2.7.egg',
+  '/mist3/eggs/zope.deprecation-4.1.2-py2.7.egg',
+  '/mist3/eggs/zope.interface-4.1.2-py2.7-linux-x86_64.egg',
+  '/mist3/eggs/repoze.lru-0.6-py2.7.egg',
+  '/mist3/eggs/WebOb-1.4.1-py2.7.egg',
+  '/mist3/eggs/Mako-1.0.1-py2.7.egg',
+  '/mist3/eggs/Chameleon-2.22-py2.7.egg',
+  '/mist3/eggs/certifi-2015.4.28-py2.7.egg',
+  '/mist3/eggs/anyjson-0.3.3-py2.7.egg',
+  '/mist3/eggs/sphinx_rtd_theme-0.1.8-py2.7.egg',
+  '/mist3/eggs/alabaster-0.7.6-py2.7.egg',
+  '/mist3/eggs/Babel-2.0-py2.7.egg',
+  '/mist3/eggs/snowballstemmer-1.2.0-py2.7.egg',
+  '/mist3/eggs/docutils-0.12-py2.7.egg',
+  '/mist3/eggs/Pygments-2.0.2-py2.7.egg',
+  '/mist3/eggs/selenium-2.47.1-py2.7.egg',
+  '/mist3/eggs/parse_type-0.3.4-py2.7.egg',
+  '/mist3/eggs/enum34-1.0.4-py2.7.egg',
+  ]
+
+
+_interactive = True
+if len(sys.argv) > 1:
+    _options, _args = __import__("getopt").getopt(sys.argv[1:], 'ic:m:')
+    _interactive = False
+    for (_opt, _val) in _options:
+        if _opt == '-i':
+            _interactive = True
+        elif _opt == '-c':
+            exec(_val)
+        elif _opt == '-m':
+            sys.argv[1:] = _args
+            _args = []
+            __import__("runpy").run_module(
+                 _val, {}, "__main__", alter_sys=True)
+
+    if _args:
+        sys.argv[:] = _args
+        __file__ = _args[0]
+        del _options, _args
+        with open(__file__, 'U') as __file__f:
+            exec(compile(__file__f.read(), __file__, "exec"))
+
+if _interactive:
+    del _interactive
+    __import__("code").interact(banner="", local=globals())

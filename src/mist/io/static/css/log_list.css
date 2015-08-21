@@ -1,0 +1,109 @@
+.details {
+    display: none;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.details.info-table {
+    background-color: rgb(214, 214, 214);
+}
+
+.details table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.details table td {
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.log-list .ui-block-c div {
+    float: right;
+    margin-left: 10px;
+}
+
+.log-list .ui-block-a div {
+    float: left;
+    top: 3px;
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    text-overflow: ellipsis;
+}
+
+.log-list .filter-wrapper {
+    margin-bottom: 20px;
+}
+
+.log-list .filter-wrapper fieldset {
+    float: left;
+}
+
+.log-list .filter-wrapper .ui-input-text {
+    margin-left: 32.5em;
+    margin-top: 2px;
+    position: relative;
+    top: 7px;
+}
+
+.log-list a .ui-block-a {
+    text-align: left;
+}
+
+.log-list .ui-block-a div.error {
+    top: 0;
+    left: 5px;
+}
+
+.log-list a .ui-block-c {
+    text-align: right;
+}
+
+.log-list li a {
+    margin: 0;
+}
+
+.log-list span.open {
+
+}
+
+.log-list span.open a {
+    background-color: rgb(214, 214, 214);
+}
+
+
+.log-list .details table td:first-child {
+    width: 33%;
+}
+
+.log-list .details table td:last-child {
+    width: 66%;
+}
+
+.no-logs {
+    border-top: 3px solid #eee;
+}
+
+.log-list .details td > div, td > div.df {
+    max-height: 300px;
+    white-space: pre;
+    overflow: auto;
+}
+
+.log-list ul {
+    margin-top: 1em;
+}
+
+.log-list ul li {
+    padding: 0 !important;
+    border: none !important;
+}
+
+.log-list ul li a {
+    margin: 0 !important;
+}
+
+.log-list .tag {
+    float: none;
+}

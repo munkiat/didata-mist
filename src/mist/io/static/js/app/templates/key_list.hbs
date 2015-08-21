@@ -1,0 +1,71 @@
+<div id="key-list-page" data-role="page" class="ui-page-active">
+
+    <div data-role="header" data-theme="b">
+
+        <a href="#" class="responsive-button ui-btn-left ui-btn ui-icon-home
+            ui-btn-icon-left ui-shadow ui-corner-all">Home</a>
+
+        <h1>Keys</h1>
+
+        {{view "userMenu"}}
+
+    </div>
+
+    <div data-role="content" data-theme="a">
+
+        <a id="select-keys-btn"
+           class="responsive-button"
+           data-role="button"
+           data-icon="arrow-d"
+           {{action "selectClicked" target="view"}}>Select</a>
+
+        <a id="add-key-btn"
+           class="responsive-button  ui-btn ui-btn-d ui-icon-plus
+                ui-btn-icon-right ui-shadow ui-corner-all"
+           {{action "addClicked" target="view"}}>Add</a>
+
+        <ul data-role="listview"
+            data-filter="true"
+            data-inset="true"
+            data-filter-placeholder="Filter..."
+            class="checkbox-list">
+            {{#each Mist.keysController.content}}
+                {{view "keyListItem" keyBinding="this" class="checkbox-link"}}
+            {{/each}}
+        </ul>
+
+        <div class="mid-padding"></div>
+
+    </div>
+
+    {{view "dialog"}}
+
+    {{view "keyAdd"}}
+
+    {{view "keyEdit"}}
+
+    <div id="select-keys-popup" data-role="popup" data-transition="flip" data-position-to="#select-keys-btn">
+        <ul data-role='listview'>
+            <li data-icon="false">
+                <a {{action "selectionModeClicked" true target="view"}}>All</a>
+            </li>
+            <li data-icon="false">
+                <a {{action "selectionModeClicked" false target="view"}}>None</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="tri-action-footer" data-role="footer" data-theme="b">
+        <table><tbody><tr><td>
+            <a class="ui-btn ui-icon-edit ui-btn-icon-left ui-shadow ui-corner-all"
+                {{action "renameClicked" target="view"}}>Rename</a>
+        </td><td>
+            <a class="ui-btn ui-icon-delete ui-btn-icon-left ui-shadow ui-corner-all"
+                {{action "deleteClicked" target="view"}}>Delete</a>
+        </td><td>
+            <a class="ui-btn ui-icon-gear ui-btn-icon-left ui-shadow ui-corner-all"
+                {{action "setDefaultClicked" target="view"}}>Set default</a>
+        </td></tr></tbody></table>
+    </div>
+
+</div>
